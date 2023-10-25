@@ -13,8 +13,15 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        'custom_blue': '#1188EC',
+        'custom_blue_hover': '#1170ec',
+      },
     },
   },
+  darkMode: 'class',
   plugins: [],
 }
 export default config

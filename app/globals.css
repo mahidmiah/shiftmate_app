@@ -2,26 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* * {
+  @apply transition-colors duration-200;
+} */
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 0.375rem;
+  /* border-bottom-right-radius: 0.375rem; */
+}
+
+.offset_border_bottom_light {
+  box-shadow: 0 -1.5px 0 0 #E3E2E9 inset;
+}
+
+.offset_border_bottom_dark {
+  box-shadow: 0 -1.5px 0 0 #373737 inset;
+}
+
+.navbar {
+  @apply w-full h-full widget_bg widget_border border-r flex flex-col items-center
+}
+
+.page_bg {
+  @apply bg-[#FCFDFF] dark:bg-[#242424]
+}
+
+.widget_bg {
+  @apply bg-[#FFFFFF] dark:bg-[#1E1E1E]
+}
+
+.widget_border {
+  @apply border-[#E3E2E9] dark:border-[#373737]
+}
+
+.section_text {
+  @apply text-[#333E52] dark:text-white
+}
+
+.outline_button {
+  @apply h-8 px-2 flex items-center gap-2 text-sm border widget_border rounded-md shadow-sm hover:text-white hover:bg-[#1188EC] section_text
+}
+
+.blue_button {
+  @apply text-white bg-custom_blue hover:bg-custom_blue_hover border-custom_blue hover:border-custom_blue_hover border w-full rounded-md font-medium shadow-md text-sm
 }
