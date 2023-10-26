@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 type params = {
   timeSlots: string[];
@@ -6,9 +6,25 @@ type params = {
   shiftData?: { [key: string]: JSX.Element | undefined };
 }
 
+function scrollToHorizontally() {
+  // Find the 'schedule_container' element by its id
+  const container = document.getElementById('schedule_container');
+
+  if (container) {
+    // Set the scrollLeft property to scroll horizontally
+    container.scrollLeft = 160 * 10;
+  }
+}
+
 function Schedule({timeSlots, positions, shiftData}:params) {
+
+  // Call scrollToHorizontally when the component mounts
+  useEffect(() => {
+    scrollToHorizontally();
+  }, []);
+
   return (
-    <div className='z-10 h-full w-full overflow-auto section_text text-xs'>
+    <div className='z-10 h-full w-full overflow-auto section_text text-xs' id='schedule_container'>
       <div className='z-10 widget_bg bg-red-5000 w-20 lg:w-40 h-12 sticky left-0 top-70 border-[0.5px] border-t widget_border -mb-12'></div>
       <div className="flex">
 
@@ -17,7 +33,7 @@ function Schedule({timeSlots, positions, shiftData}:params) {
         {/* top left corner */}
         {/* <div className='z-10 widget_bg w-20 lg:w-40 h-12 absolute top-66 border-[0.5px] border-t widget_border'></div> */}
 
-          <div className='flex flex-row sticky top-0 '>
+          <div className='flex flex-row sticky top-'>
             {/* Top left corner, still needed or the time slot starts from col 0 which is hidden by the overlaid top corner from above */}
             <div className='h-12 w-20 lg:w-40 border-[0.5px] border-t widget_border sticky left-0 top-0 widget_bg'></div> 
             {

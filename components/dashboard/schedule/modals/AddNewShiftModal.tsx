@@ -86,7 +86,10 @@ function AddNewShiftModal() {
       try {
         const response = await axios.get('/api/business/employees/getallemployees');
         if(response.data.status == 200){
-          setEmployees(response.data.data.employees);
+          const employees = response.data.data.employees;
+          // Sort the employees array by employeeName
+          const sorted = employees.sort((a:any, b:any) => a.firstName.localeCompare(b.firstName));        
+          setEmployees(sorted);
         }
         else if (response.data.status == 400){
           toast.error('User not found!');
