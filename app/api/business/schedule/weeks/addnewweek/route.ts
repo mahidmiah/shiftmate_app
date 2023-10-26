@@ -22,6 +22,17 @@ export async function POST(request: NextRequest) {
       });
     }
 
+    //check if week exists
+
+    const existingWeek = await Week.findOne({businessID: tokenData.id, weekNumber: weekNumber, year: year});
+
+    if (existingWeek){
+      return NextResponse.json({
+        error: "Week already exists!",
+        status: 400,
+      });
+    }
+
     // Get the second-to-last week (previous week)
     console.log('0.1 called')
     console.log(business.weeks)
