@@ -211,7 +211,12 @@ function ScheduleContainer()  {
     setLoading(true);
     generateNullShiftData();
     generateShiftDataFromWeek();
-    setLoading(false);
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+    return () => {
+      clearTimeout(timeout);
+    }
   }, [data]);
 
   useEffect(() => {

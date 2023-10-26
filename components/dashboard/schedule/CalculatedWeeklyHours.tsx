@@ -33,7 +33,7 @@ function CalculatedWeeklyHours() {
       } else if (response.data.status === 400) {
         toast.error('Business not found!');
       } else {
-        toast.error('Something went wrong!');
+        // toast.error('Something went wrong!');
       }
     } catch (error: any) {
       toast.error(error.message);
@@ -41,6 +41,7 @@ function CalculatedWeeklyHours() {
   }
 
   useEffect(() => {
+    setEmployeeHours([]);
     calculate();
   }, [currentWeek, currentYear, scheduleUpdate])
 
