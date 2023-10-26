@@ -11,7 +11,7 @@ import { MdAdd } from 'react-icons/md';
 import { AiOutlineSortAscending } from 'react-icons/ai';
 import useShiftStore from '@/store/shiftStore';
 
-function page() {
+function Page() {
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -142,4 +142,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

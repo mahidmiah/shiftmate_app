@@ -9,7 +9,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 
-function settingsPage() {
+function Page() {
 
   const [isVisible, setIsVisible] = useState(false);
   const [page, setPage] = useState(0);
@@ -87,4 +87,4 @@ function settingsPage() {
   )
 }
 
-export default settingsPage
+export default Page

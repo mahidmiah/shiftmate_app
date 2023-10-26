@@ -26,7 +26,7 @@ export default function DashboardLayout({children,}: {children: React.ReactNode}
 
   useEffect(() => {
     getDarkModePreference();
-  }, [])
+  }, [DashboardLayout])
 
   const darkMode = useShiftStore((state) => state.darkMode)
     

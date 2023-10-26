@@ -44,8 +44,8 @@ function Schedule({timeSlots, positions, shiftData}:params) {
           </div>
           
           {positions?.map((position: string) => (
-            <div className='row flex flex-row'>
-              <div key={position} className='z-20 h-12 w-20 lg:w-40 overflow-hidden border-[0.5px] widget_border font-bold flex items-center justify-start pl-4 text-sm sticky left-0 top-12 widget_bg'>{position}</div>
+            <div key={position} className='row flex flex-row'>
+              <div className='z-20 h-12 w-20 lg:w-40 overflow-hidden border-[0.5px] widget_border font-bold flex items-center justify-start pl-4 text-sm sticky left-0 top-12 widget_bg'>{position}</div>
               {timeSlots.map((time:string) => (
                 // Parent / Container
                 <div key={position + '-' + time} className='h-12 w-40 border-[0.5px] widget_border text-xs page_bg static pl-1 py-1'>{shiftData && shiftData[`${position}_${time}`]}</div>

@@ -9,7 +9,7 @@ import DeleteShiftModal from '@/components/dashboard/schedule/modals/DeleteShift
 import EditShiftModal from '@/components/dashboard/schedule/modals/EditShiftModal';
 import CalculatedWeeklyHours from '@/components/dashboard/schedule/CalculatedWeeklyHours';
 
-function page() {
+function Page() {
 
   // Store Vars
   const isAddShiftModalVisible = useShiftStore(state => state.isAddShiftModalVisible);
@@ -60,4 +60,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
