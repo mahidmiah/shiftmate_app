@@ -1,3 +1,21 @@
+type CommonEditEmployeeModalData = {
+  firstName?: string;
+  lastName?: string;
+  password?: string;
+  id?: string;
+  background?: string;
+  foreground?: string;
+  weekNumber?: number;
+  currentYear?: number;
+  employeeID?: string;
+  position?: string;
+  dayOfWeek?: string;
+  startTime?: string;
+  endTime?: string;
+  existingShiftID?: string;
+};
+
+
 type Employee = {
   id: string;
   firstName: string;

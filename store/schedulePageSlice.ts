@@ -23,16 +23,7 @@ export type SchedulePageSlice = {
     endTime: string;
   };
 
-  editEmployeelModalData: {
-    weekNumber: number;
-    currentYear: number;
-    employeeID: string;
-    position: string;
-    dayOfWeek: string;
-    startTime: string;
-    endTime: string;
-    existingShiftID: string;
-  };
+  editEmployeelModalData: CommonEditEmployeeModalData;
 
   setCurrentWeek: (week:number) => void;
   setSelectedDays: (dates: Date[]) => void;

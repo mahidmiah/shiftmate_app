@@ -10,14 +10,7 @@ export type EmployeePageSlice = {
     lastName: string;
     id: string;
   };
-  editEmployeelModalData: {
-    firstName: string;
-    lastName: string;
-    password: string;
-    id: string;
-    background: string;
-    foreground: string;
-  };
+  editEmployeelModalData: CommonEditEmployeeModalData;
   setEmployees: (data: Employee[]) => void;
 
   //Edit Modal
