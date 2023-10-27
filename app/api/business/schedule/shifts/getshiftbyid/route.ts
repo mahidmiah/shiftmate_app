@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    const shift = await Shift.findOne({_id: shiftID});
+    const shift = await Shift.findById(shiftID);
     
     return NextResponse.json({
       message: 'Shift has been found successfully',
